@@ -1,0 +1,362 @@
+{
+  "info": {
+    "name": "AutoLoc API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081"
+    }
+  ],
+  "item": [
+    {
+      "name": "Agences",
+      "item": [
+        {
+          "name": "POST - créer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/agences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"AutoLoc Sfax Centre\",\n  \"ville\": \"Sfax\",\n  \"adresse\": \"Avenue Habib Bourguiba\",\n  \"telephone\": \"74000000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET - lister tout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/agences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - par id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/agences/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT - modifier",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/agences/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"AutoLoc Sfax Nord\",\n  \"ville\": \"Sfax\",\n  \"adresse\": \"Avenue Habib Bourguiba\",\n  \"telephone\": \"74111111\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - supprimer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/agences/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agences",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vehicules",
+      "item": [
+        {
+          "name": "POST - créer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vehicules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"200 TU 1234\",\n  \"marque\": \"Peugeot\",\n  \"modele\": \"208\",\n  \"categorie\": \"CITADINE\",\n  \"tarifJournalier\": 85.0,\n  \"statut\": \"DISPONIBLE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET - lister tout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vehicules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - par id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vehicules/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT - modifier",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vehicules/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"immatriculation\": \"200 TU 1234\",\n  \"marque\": \"Peugeot\",\n  \"modele\": \"208\",\n  \"categorie\": \"CITADINE\",\n  \"tarifJournalier\": 95.0,\n  \"statut\": \"LOUE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - supprimer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/vehicules/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vehicules",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clients",
+      "item": [
+        {
+          "name": "POST - créer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/clients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Mallouli\",\n  \"prenom\": \"Eya\",\n  \"email\": \"client.test@example.com\",\n  \"telephone\": \"20000000\",\n  \"numPermis\": \"PERMIS-0001\",\n  \"dateInscription\": \"2026-10-19\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET - lister tout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/clients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - par id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/clients/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PUT - modifier",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/clients/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Mallouli\",\n  \"prenom\": \"Eya\",\n  \"email\": \"client.test@example.com\",\n  \"telephone\": \"21111111\",\n  \"numPermis\": \"PERMIS-0001\",\n  \"dateInscription\": \"2026-10-19\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - supprimer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/clients/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clients",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

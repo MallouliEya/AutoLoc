@@ -16,3 +16,26 @@ Projet Spring Boot / Maven de l'étude de cas **AutoLoc** (ASI 26-27).
    (IntelliJ : Run → Edit Configurations → Environment variables → `DB_PASSWORD=...`).
 3. Activer l'annotation processing (Settings → Compiler → Annotation Processors).
 4. Lancer `AutolocApiApplication` puis vérifier les 9 tables dans `autoloc_db`.
+
+## API REST + documentation Swagger (SpringDoc)
+
+- Dépendance : `springdoc-openapi-starter-webmvc-ui` (2.8.9)
+- Swagger UI : http://localhost:8081/swagger-ui.html
+- Spécification OpenAPI : http://localhost:8081/v3/api-docs
+
+### Endpoints CRUD (Agence, Vehicule, Client)
+
+| Méthode | URL | Rôle | Codes |
+|---|---|---|---|
+| GET | `/agences` · `/vehicules` · `/clients` | lister | 200 |
+| GET | `/{ressource}/{id}` | détail | 200 / 404 |
+| POST | `/{ressource}` | créer | 201 |
+| PUT | `/{ressource}/{id}` | modifier | 200 / 404 |
+| DELETE | `/{ressource}/{id}` | supprimer | 204 / 404 |
+
+Les endpoints sont documentés avec `@Tag`, `@Operation`, `@ApiResponse` et `@Parameter`.
+Les associations sont exclues du JSON avec `@JsonIgnore` pour éviter les boucles de sérialisation.
+
+### Tests Postman
+
+Importer `postman/AutoLoc.postman_collection.json` dans Postman (variable `baseUrl` = `http://localhost:8081`).
